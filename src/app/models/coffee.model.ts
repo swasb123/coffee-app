@@ -1,4 +1,4 @@
-export class Coffee {
+export interface Coffee {
   id?: string;
   uid?: string;
   blend_name?: string;

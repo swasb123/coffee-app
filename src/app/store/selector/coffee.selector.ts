@@ -1,9 +1,13 @@
-import { createSelector } from "@ngrx/store";
-import { Coffee } from "src/app/models/coffee.model";
-import { CoffeState } from "../reducers/coffee.reducer";
-
+import { createSelector } from '@ngrx/store';
+import { Coffee } from 'src/app/models/coffee.model';
+import { CoffeState } from '../reducers/coffee.reducer';
 
 export const coffeeSelector = createSelector(
-    (state:CoffeState) => state.coffees,
-    (coffees: ReadonlyArray<Coffee>) => coffees
+  (state: CoffeState) => state.coffees,
+  (coffees: ReadonlyArray<Coffee>) => coffees
 );
+
+export const coffeeDetails = (id: string | null) =>
+  createSelector(coffeeSelector, (coffees) => {
+    return coffees.filter((coffee: Coffee) => coffee.id == id);
+  });

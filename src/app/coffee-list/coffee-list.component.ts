@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { Coffee } from '../models/coffee.model';
 import { select, Store } from '@ngrx/store';
 import { CoffeState } from '../store/reducers/coffee.reducer';
 import { coffeeSelector } from '../store/selector/coffee.selector';

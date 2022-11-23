@@ -6,7 +6,14 @@
     <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>No</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          [routerLink]="['/coffeeDetails/', element.id]"
+          [ngClass]="'pointer-link'"
+        >
+          {{ element.id }}
+        </td>
       </ng-container>
       <ng-container matColumnDef="uid">
         <th mat-header-cell *matHeaderCellDef>User Id</th>

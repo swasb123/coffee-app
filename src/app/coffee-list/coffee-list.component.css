@@ -28,3 +28,8 @@
 .mat-header-cell {
   font: bold 1em/1em Arial, sans-serif;
 }
+
+.pointer-link {
+  cursor: pointer;
+  color: coral;
+}
