@@ -1,21 +1,22 @@
+.example-header {
+  min-height: 45px;
+  padding: 8px 15px 0;
+}
+
+.sub-header {
+  color: darkslategray;
+  padding: 0 0 0 15px;
+  margin: 0;
+  min-height: 35px;
+  font: 1.25em bold Tahoma, sans-serif;
+}
+
+.card {
+  width: 50vw;
+}
+
 .container {
   viewport-fit: calc(100% - 100);
   margin: 0 auto;
   padding: 10px;
-}
-
-.example-header {
-  min-height: 34px;
-  padding: 8px 0 0 14px;
-}
-
-.example-sub-header {
-  color: darkolivegreen;
-  padding: 0;
-  margin: 0 0 0 14px;
-  min-height: 15px;
-}
-
-.example-card {
-  width: 50vw;
 }

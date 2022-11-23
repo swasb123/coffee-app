@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Coffee } from '../models/coffee.model';
 
@@ -13,9 +13,9 @@ export class CoffeeService {
 
   getCoffee(): Observable<ReadonlyArray<Coffee>> {
     return this.http.get<ReadonlyArray<Coffee>>(this.url).pipe(
-      catchError((error: HttpErrorResponse) => {
+      catchError((error) => {
         console.error(error);
-        return throwError(error);
+        return throwError(() => new Error(error));
       })
     );
   }

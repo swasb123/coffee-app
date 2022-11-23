@@ -4,11 +4,6 @@
   min-width: 300px;
 }
 
-.example-header {
-  min-height: 64px;
-  padding: 8px 24px 0;
-}
-
 .mat-form-field {
   font-size: 14px;
   width: 100%;
@@ -17,12 +12,6 @@
 .mat-table {
   overflow: auto;
   max-height: 500px;
-}
-
-.container {
-  viewport-fit: calc(100% - 100);
-  margin: 0 auto;
-  padding: 10px;
 }
 
 .mat-header-cell {

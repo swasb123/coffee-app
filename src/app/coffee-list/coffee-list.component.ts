@@ -5,6 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { CoffeState } from '../store/reducers/coffee.reducer';
 import { coffeeSelector } from '../store/selector/coffee.selector';
 import { Subject, takeUntil } from 'rxjs';
+import { Coffee } from '../models/coffee.model';
 
 @Component({
   selector: 'app-coffee-list',
@@ -22,7 +23,7 @@ export class CoffeeListComponent implements OnInit, OnDestroy {
     'notes',
     'intensifier',
   ];
-  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
+  dataSource: MatTableDataSource<Coffee> = new MatTableDataSource<Coffee>();
   @ViewChild(MatPaginator) matPaginator!: MatPaginator;
 
   subject = new Subject();
@@ -30,20 +31,12 @@ export class CoffeeListComponent implements OnInit, OnDestroy {
   constructor(private store: Store<CoffeState>) {}
 
   ngOnInit(): void {
-    /* this.store.pipe(select(coffeeSelector)).subscribe((data) => {
-      this.coffeeData$ = data;
-      this.dataSource = new MatTableDataSource<any>(this.coffeeData$);
-      if (this.matPaginator) {
-        this.dataSource.paginator = this.matPaginator;
-      }
-    }); */
-
     this.store
       .pipe(select(coffeeSelector))
       .pipe(takeUntil(this.subject))
       .subscribe((data) => {
         this.coffeeData$ = data;
-        this.dataSource = new MatTableDataSource<any>(this.coffeeData$);
+        this.dataSource = new MatTableDataSource<Coffee>(this.coffeeData$);
         if (this.matPaginator) {
           this.dataSource.paginator = this.matPaginator;
         }

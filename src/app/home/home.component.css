@@ -1,0 +1,10 @@
+.container {
+  viewport-fit: calc(100% - 100);
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.example-header {
+  min-height: 45px;
+  padding: 8px 24px 0;
+}
