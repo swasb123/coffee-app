@@ -1,21 +1,21 @@
 <div class="container">
-<div class="example-header">
-  <h2 class="header-text">Coffee App</h2>
-</div>
-<h4 class="sub-header">Coffee Details</h4>
-<ng-container *ngFor="let coffee of coffeeData$; let i = index">
-  <mat-card class="card mat-elevation-z8">
-    <mat-card-title>{{ coffee.blend_name }}</mat-card-title>
-    <mat-card-subtitle
-      >{{ coffee.origin }} | Id: {{ coffee.id }}</mat-card-subtitle
-    >
-    <mat-card-content>
-      <p>{{ coffee.variety }}</p>
-      <p>{{ coffee.notes }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="homeRoute()">Back To Home</button>
-    </mat-card-actions>
-  </mat-card>
-</ng-container>
+  <div class="example-header">
+    <h2 class="header-text">Coffee App</h2>
+  </div>
+  <h4 class="sub-header">Coffee Details</h4>
+  <ng-container *ngFor="let coffee of coffeeData$; let i = index">
+    <mat-card class="card mat-elevation-z8">
+      <mat-card-title>{{ coffee.blend_name }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ coffee.origin }} | ID: {{ coffee.id }}</mat-card-subtitle
+      >
+      <mat-card-content>
+        <p>{{ coffee.variety }}</p>
+        <p>{{ coffee.notes }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="homeRoute()">Back To Home</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
 </div>

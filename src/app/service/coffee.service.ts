@@ -15,7 +15,9 @@ export class CoffeeService {
     return this.http.get<ReadonlyArray<Coffee>>(this.url).pipe(
       catchError((error) => {
         console.error(error);
-        return throwError(() => new Error(error));
+        return throwError(
+          () => new Error('Invalid response received from API')
+        );
       })
     );
   }

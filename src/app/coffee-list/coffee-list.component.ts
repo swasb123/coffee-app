@@ -16,7 +16,6 @@ export class CoffeeListComponent implements OnInit, OnDestroy {
   coffeeData$: any = [];
   displayedColumns = [
     'id',
-    'uid',
     'blend_name',
     'origin',
     'variety',
